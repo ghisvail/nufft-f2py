@@ -3,12 +3,6 @@
 
 python module nufft ! in 
     interface  ! in :nufft
-        subroutine errcomp(fk0,fk1,n,err) ! in :nufft:./extern/libnufft-1.3.2/nufft1d_demof90.f
-            complex*16 dimension(n) :: fk0
-            complex*16 dimension(n),depend(n) :: fk1
-            integer, optional,check(len(fk0)>=n),depend(fk0) :: n=len(fk0)
-            real*8 :: err
-        end subroutine errcomp
         subroutine nufft1d1f90(nj,xj,cj,iflag,eps,ms,fk,ier) ! in :nufft:./extern/libnufft-1.3.2/nufft1df90.f
             integer, optional,check(len(xj)>=nj),depend(xj) :: nj=len(xj)
             real*8 dimension(nj) :: xj
@@ -40,12 +34,6 @@ python module nufft ! in
             complex*16 dimension(nk),depend(nk) :: fk
             integer :: ier
         end subroutine nufft1d3f90
-        subroutine errcomp(fk0,fk1,n,err) ! in :nufft:./extern/libnufft-1.3.2/nufft2d_demof90.f
-            complex*16 dimension(n) :: fk0
-            complex*16 dimension(n),depend(n) :: fk1
-            integer, optional,check(len(fk0)>=n),depend(fk0) :: n=len(fk0)
-            real*8 :: err
-        end subroutine errcomp
         subroutine nufft2d1f90(nj,xj,yj,cj,iflag,eps,ms,mt,fk,ier) ! in :nufft:./extern/libnufft-1.3.2/nufft2df90.f
             integer, optional,check(len(xj)>=nj),depend(xj) :: nj=len(xj)
             real*8 dimension(nj) :: xj
@@ -83,12 +71,6 @@ python module nufft ! in
             complex*16 dimension(nk),depend(nk) :: fk
             integer :: ier
         end subroutine nufft2d3f90
-        subroutine errcomp(fk0,fk1,n,err) ! in :nufft:./extern/libnufft-1.3.2/nufft3d_demof90.f
-            complex*16 dimension(n) :: fk0
-            complex*16 dimension(n),depend(n) :: fk1
-            integer, optional,check(len(fk0)>=n),depend(fk0) :: n=len(fk0)
-            real*8 :: err
-        end subroutine errcomp
         subroutine nufft3d1f90(nj,xj,yj,zj,cj,iflag,eps,ms,mt,mu,fk,ier) ! in :nufft:./extern/libnufft-1.3.2/nufft3df90.f
             integer, optional,check(len(xj)>=nj),depend(xj) :: nj=len(xj)
             real*8 dimension(nj) :: xj
