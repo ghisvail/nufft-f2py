@@ -17,6 +17,7 @@ ext = Extension(name = "nufft",
 if __name__ == "__main__":
     from numpy.distutils.core import setup
     setup(name = "nufftpy",
+          version = "0.1",
           description = "Python wrappers for Greengard and Lee's NUFFT",
           author = 'Ghislain Vaillant',
           author_email = 'ghislain.vaillant@kcl.ac.uk',
